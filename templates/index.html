@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>URL Submission</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #f3f5f9;
+    }
+
+    .container {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0px 14px 28px rgba(0,0,0,0.1), 0px 10px 10px rgba(0,0,0,0.12);
+      overflow: hidden;
+      width: 700px;
+      max-width: 100%;
+    }
+
+    .form-container {
+      padding: 30px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      margin-top: 15px;
+      color: #333;
+      font-weight: 500;
+    }
+
+    input[type="text"], input[type="file"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      transition: border 0.3s ease;
+    }
+
+    input[type="text"]:focus, input[type="file"]:focus {
+      border-color: #5B9BD5;
+    }
+
+    input[type="submit"] {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      border: none;
+      background: #5B9BD5;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background: #4a89dc;
+    }
+
+    input[type="submit"]:active {
+      transform: scale(0.98);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="form-container">
+      <form action="/upload_file" method="post" enctype="multipart/form-data">
+        <label for="html">Upload HTML file:</label>
+        <input type="file" id="html" name="html" accept="application/html">
+        <input type="submit" value="Upload">
+      </form>
+      <form action="/upload_url" method="post">
+        <label for="url">Enter URL:</label>
+        <input type="text" id="url" name="url">
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
