@@ -1,4 +1,6 @@
 from keys_data import *
+import os
+from pathlib import Path
 class question :
     def __init__(self,questionNumber, questionID, answerID, KeyID):
         self.questionNumber = questionNumber
@@ -127,8 +129,7 @@ def give_marks_of_soup(soup):
     print("Chemistry:",chemistry)
     print("Total:",total)
     return (total)
-import os
-from pathlib import Path
+
 
 def give_marks(whatever):
     if whatever.startswith("http"):

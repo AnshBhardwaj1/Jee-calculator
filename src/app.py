@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template
-from mains_marks import give_marks  # Import the function from your script
+from src.mains_marks import give_marks
 from werkzeug.utils import secure_filename
 import os
 
