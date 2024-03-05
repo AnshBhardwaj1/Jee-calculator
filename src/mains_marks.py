@@ -8,12 +8,14 @@ class question :
         self.answerID = answerID
         self.KeyID = KeyID
     def marks(self):
-        if self.answerID != ' -- ':
-            if self.answerID == self.KeyID and self.answerID != "Drop":
+        if self.KeyID=="Drop":
+            return 4
+        elif self.answerID != ' -- ':
+            if self.answerID == self.KeyID:
                 return 4
-            if self.answerID != self.KeyID  and self.KeyID != " -- " :
+            elif self.answerID != self.KeyID :
                 return -1
-        else:
+        elif self.answerID == ' -- ':
             return 0 
     def __str__(self):
         return "Question Number: " + self.questionNumber + " Question ID: " + self.questionID + " Answer ID: " + self.answerID + " Key ID: " + self.KeyID
@@ -136,9 +138,7 @@ def give_marks(whatever):
         soup = soup_from_link(whatever)
         marks = give_marks_of_soup(soup)
     else:
-        print(f"Checking if file {whatever} exists...")
         if Path(whatever).is_file():
-            print(f"File {whatever} exists. Proceeding...")
             soup = soup_from_file(whatever)
             marks = give_marks_of_soup(soup)
             os.remove(whatever) 
@@ -153,4 +153,5 @@ if __name__=="__main__":
     print (f"Your marks are {marks}")
     marks_html=give_marks('Test.html')
     print (f"Your marks are {marks_html}")
+
         
