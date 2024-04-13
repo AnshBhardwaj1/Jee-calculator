@@ -25,9 +25,9 @@ def upload_file():
         file_path = os.path.join(directory, filename)
         file.save(file_path)
         
-        total, maths, physics, chemistry = give_marks(file_path)
+        total, maths, physics, chemistry, rank = give_marks(file_path)
         
-        return render_template('result.html', total=total, maths=maths, physics=physics, chemistry=chemistry)
+        return render_template('result.html', total=total, maths=maths, physics=physics, chemistry=chemistry, rank=rank)
 
 @app.route('/upload_url', methods=['POST'])
 def upload_url():
@@ -35,6 +35,6 @@ def upload_url():
     if not url:
         return 'No URL provided'
     
-    total, maths, physics, chemistry = give_marks(url)
+    total, maths, physics, chemistry, rank= give_marks(url)
     
-    return render_template('result.html', total=total, maths=maths, physics=physics, chemistry=chemistry)
+    return render_template('result.html', total=total, maths=maths, physics=physics, chemistry=chemistry, rank=rank)
