@@ -4,10 +4,16 @@
     {
       "src": "./index.py",
       "use": "@vercel/python",
-      "config": {"runtime": "python3.12"}
+      "config": {
+        "runtime": "python3.12"
+      }
     }
   ],
   "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/myflaskapp/src/static/$1"
+    },
     {
       "src": "/(.*)",
       "dest": "/"

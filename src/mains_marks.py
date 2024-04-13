@@ -62,6 +62,26 @@ def give_marks_of_soup(soup):
         key=mains1febshift1anskey
     if date=="01/02/2024" and time=="3:00 PM - 6:00 PM":
         key=mains1febshift2anskey
+    if date=="04/04/2024" and time=="9:00 AM - 12:00 PM":
+        key=mains4aprilshift1anskey
+    if date=="04/04/2024" and time=="3:00 PM - 6:00 PM":
+        key=mains4aprilshift2anskey
+    if date=="05/04/2024" and time=="9:00 AM - 12:00 PM":
+        key=mains5aprilshift1anskey
+    if date=="05/04/2024" and time=="3:00 PM - 6:00 PM":
+        key=mains5aprilshift2anskey
+    if date=="06/04/2024" and time=="9:00 AM - 12:00 PM":
+        key=mains6aprilshift1anskey
+    if date=="06/04/2024" and time=="3:00 PM - 6:00 PM":
+        key=mains6aprilshift2anskey
+    if date=="08/04/2024" and time=="9:00 AM - 12:00 PM":
+        key=mains8aprilshift1anskey
+    if date=="08/04/2024" and time=="3:00 PM - 6:00 PM":
+        key=mains8aprilshift2anskey
+    if date=="09/04/2024" and time=="9:00 AM - 12:00 PM":
+        key=mains9aprilshift1anskey
+    if date=="09/04/2024" and time=="3:00 PM - 6:00 PM":
+        key=mains9aprilshift2anskey
 
     #option_chose=None
     questions=[]
@@ -126,11 +146,7 @@ def give_marks_of_soup(soup):
     for i in range(62,len(questions)):
         chemistry = chemistry + questions[i].marks()
     total=maths+physics+chemistry
-    print("Maths:",maths)
-    print("Physics:",physics)
-    print("Chemistry:",chemistry)
-    print("Total:",total)
-    return (total)
+    return (total,maths,physics,chemistry)
 
 
 def give_marks(whatever):
@@ -144,14 +160,14 @@ def give_marks(whatever):
             os.remove(whatever) 
         else:
             print(f"File {whatever} does not exist.")
-            return
+            return (None)
     return marks
     
 if __name__=="__main__":
     link=("https://cdn3.digialm.com//per/g28/pub/2083/touchstone/AssessmentQPHTMLMode1//2083O23354/2083O23354S15D16244/17067996516627886/KK14005904_2083O23354S15D16244E1.html#")
     marks=give_marks(link)
     print (f"Your marks are {marks}")
-    marks_html=give_marks('Test.html')
-    print (f"Your marks are {marks_html}")
+    #marks_html=give_marks('Test.html')
+    #print (f"Your marks are {marks_html}")
 
         
