@@ -8,83 +8,21 @@
   <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
   <link rel="icon" href="favicons/favicon.ico" type="image/x-icon">
   <link rel="manifest" href="favicons/site.webmanifest">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Poppins', sans-serif;
-    }
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
 
-    body {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      background: #f3f5f9;
-    }
-
-    h2 {
-      color: #333;
-      margin-bottom: 20px;
-    }
-
-    .container {
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0px 14px 28px rgba(0,0,0,0.1), 0px 10px 10px rgba(0,0,0,0.12);
-      overflow: hidden;
-      width: 700px;
-      max-width: 100%;
-      padding: 30px;
-      text-align: center;
-      position: relative;
-      margin-top: 20px;
-    }
-
-    p {
-      font-size: 24px;
-      color: #5B9BD5;
-      opacity: 0;
-      transform: scale(0);
-      transition: all 2s ease-in-out;
-    }
-
-    .banner {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(rgba(128, 128, 128, 1), rgba(128, 128, 128, 0.6));
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      transition: all 2s ease-in-out;
-    }
-  </style>
-  <script>
-    window.onload = function() {
-      var banner = document.querySelector('.banner');
-      banner.addEventListener('click', function() {
-        banner.style.transform = 'scale(0)';
-        document.querySelector('p').style.opacity = '1';
-        document.querySelector('p').style.transform = 'scale(1)';
-      });
-    };
-  </script>
 </head>
 
-<body>
-  <h2>Marks</h2>
-  <div class="container">
-    <p>You have scored : {{ output }} marks</p>
-    <div class="banner">Click to reveal your score</div>
+<body class="bg-light d-flex align-items-center justify-content-center" style="height: 100vh;">
+  <div class="container bg-white rounded shadow-sm p-5">
+    <h2 class="text-center mb-4">Marks</h2>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Total: <span class="font-weight-bold">{{ total }}</span></li>
+      <li class="list-group-item">Maths: <span class="font-weight-bold">{{ maths }}</span></li>
+      <li class="list-group-item">Physics: <span class="font-weight-bold">{{ physics }}</span></li>
+      <li class="list-group-item">Chemistry: <span class="font-weight-bold">{{ chemistry }}</span></li>
+    </ul>
   </div>
 </body>
 

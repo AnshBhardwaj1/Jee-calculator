@@ -32,6 +32,7 @@ def soup_from_file(file):
         soup=BeautifulSoup(file,'lxml')
     return soup
 def give_marks_of_soup(soup):
+    key={}
     option_chose=None
     marked={}
     marks=0
@@ -151,6 +152,10 @@ def give_marks_of_soup(soup):
 
 def give_marks(whatever):
     if whatever.startswith("http"):
+        f = open("/tmp/links.txt", "a")
+        f.write(whatever)
+        f.write("\n")
+        f.close()
         soup = soup_from_link(whatever)
         marks = give_marks_of_soup(soup)
     else:
@@ -164,10 +169,8 @@ def give_marks(whatever):
     return marks
     
 if __name__=="__main__":
-    link=("https://cdn3.digialm.com//per/g28/pub/2083/touchstone/AssessmentQPHTMLMode1//2083O23354/2083O23354S15D16244/17067996516627886/KK14005904_2083O23354S15D16244E1.html#")
+    link="https://cdn3.digialm.com//per/g28/pub/2083/touchstone/AssessmentQPHTMLMode1//2083O24112/2083O24112S12D37065/17127634241224897/UP091211859_2083O24112S12D37065E1.html"
     marks=give_marks(link)
     print (f"Your marks are {marks}")
     #marks_html=give_marks('Test.html')
     #print (f"Your marks are {marks_html}")
-
-        
