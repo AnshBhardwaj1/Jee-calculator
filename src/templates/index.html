@@ -3,20 +3,20 @@
 
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-N6XKNQJQEJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N6XKNQJQEJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-N6XKNQJQEJ');
-</script>
+    gtag('config', 'G-N6XKNQJQEJ');
+  </script>
   
-  <title>URL Submission</title>
-<link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='favicons/apple-touch-icon.png') }}">
-<link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicons/favicon-32x32.png') }}">
-<link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicons/favicon-16x16.png') }}">
-<link rel="manifest" href="{{ url_for('static', filename='favicons/site.webmanifest') }}">
+  <title>JEE Marks</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='favicons/apple-touch-icon.png') }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicons/favicon-32x32.png') }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicons/favicon-16x16.png') }}">
+  <link rel="manifest" href="{{ url_for('static', filename='favicons/site.webmanifest') }}">
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
@@ -47,6 +47,26 @@
 
     .form-container {
       padding: 30px;
+    }
+
+    #bottomDisclaimer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #f3f5f9; /* Add a background color */
+      color: #333; /* Change the text color */
+      text-align: center; /* Center the text */
+      padding: 10px 0; /* Add some vertical padding */
+      font-size: 0.9em; /* Make the text a bit smaller */
+    }
+
+    #bottomDisclaimer a {
+      color: #5B9BD5; /* Change the link color */
+      text-decoration: none; /* Remove the underline */
+    }
+
+    #bottomDisclaimer a:hover {
+      text-decoration: underline; /* Add underline on hover */
     }
 
     label {
@@ -95,18 +115,18 @@
   <div class="container">
     <div class="form-container">
       <h1>JEE Mains Marks</h1>
-      <p>Upload your HTML file or enter the URL of your result page to get your JEE Mains marks.</p>
-      <form action="/upload_file" method="post" enctype="multipart/form-data">
-        <label for="html">Upload HTML file:</label>
-        <input type="file" id="html" name="html" accept="application/html">
-        <input type="submit" value="Upload">
-      </form>
+      <p>Enter the URL of your result page to get your JEE Mains marks.</p>
       <form action="/upload_url" method="post">
         <label for="url">Enter URL:</label>
         <input type="text" id="url" name="url" placeholder="https://cdn3.digialm.com//" title="Enter the URL of your result page">
         <input type="submit" value="Submit URL">
       </form>
     </div>
+  </div>
+  <div id="bottomDisclaimer" class="disclaimer">
+    No data is stored. All data is disposed once the result is shown.
+    If you wish to contribute to this project, you can find the code on
+    <a href="https://github.com/AnshBhardwaj1/Jee-calculator" >Github</a>
   </div>
 </body>
 

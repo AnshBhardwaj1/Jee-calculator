@@ -28,11 +28,12 @@ def soup_from_link(link):
     return soup
 def soup_from_file(file):
     from bs4 import BeautifulSoup
-    with open(file, 'r') as file:
+    with open(file, 'r', encoding='ISO-8859-1') as file:
         soup=BeautifulSoup(file,'lxml')
     return soup
 def give_marks_of_soup(soup):
     key={}
+    date = None
     option_chose=None
     marked={}
     marks=0
@@ -167,23 +168,23 @@ def give_marks(whatever):
 
 def get_rank(marks):
   data = [
-    (281, 301, 100, 1),
-    (261, 281, 400, 100),
-    (241, 261, 1000, 400),
-    (221, 241, 5000, 1000),
-    (211, 221, 7000, 5000),
-    (201, 211, 13000, 7000),
-    (191, 201, 17000, 13000),
-    (181, 191, 22000, 17000),
-    (161, 181, 30000, 22000),
-    (141, 161, 60000, 30000),
-    (121, 141, 850000, 60000),
-    (101, 121, 100000, 85000),
-    (81, 101, 130000, 100000),
-    (61, 81, 200000 , 130000),
-    (41, 61, 300000, 200000),
-    (21, 41, 530000, 300000),
-    (1, 21, 1000000, 530000)
+    (281, 300, 100, 1),
+    (261, 280, 400, 100),
+    (241, 260, 1000, 400),
+    (221, 240, 5000, 1000),
+    (211, 220, 7000, 5000),
+    (201, 210, 13000, 7000),
+    (191, 200, 17000, 13000),
+    (181, 190, 22000, 17000),
+    (161, 180, 30000, 22000),
+    (141, 160, 60000, 30000),
+    (121, 140, 85000, 60000),
+    (101, 120, 100000, 85000),
+    (81, 100, 130000, 100000),
+    (61, 80, 200000 , 130000),
+    (41, 60, 300000, 200000),
+    (21, 40, 530000, 300000),
+    (1, 20, 1000000, 530000)
     ]
   for marks_range_start, marks_range_end, rank_range_start, rank_range_end in data:
     if marks_range_start <= marks <= marks_range_end:
@@ -194,8 +195,7 @@ def get_rank(marks):
 
     
 if __name__=="__main__":
-
-    link="https://cdn3.digialm.com//per/g28/pub/2083/touchstone/AssessmentQPHTMLMode1//2083O24112/2083O24112S12D37065/17127634241224897/UP091211859_2083O24112S12D37065E1.html"
+    link=""
     marks=give_marks(link)
     n=int(input("Enter the number of questions: "))
 
