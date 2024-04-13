@@ -2,11 +2,22 @@
 <html>
 
 <head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N6XKNQJQEJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-N6XKNQJQEJ');
+</script>
+  
   <title>URL Submission</title>
 <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='favicons/apple-touch-icon.png') }}">
 <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicons/favicon-32x32.png') }}">
 <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicons/favicon-16x16.png') }}">
 <link rel="manifest" href="{{ url_for('static', filename='favicons/site.webmanifest') }}">
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
@@ -92,8 +103,8 @@
       </form>
       <form action="/upload_url" method="post">
         <label for="url">Enter URL:</label>
-        <input type="text" id="url" name="url">
-        <input type="submit" value="Submit">
+        <input type="text" id="url" name="url" placeholder="https://cdn3.digialm.com//" title="Enter the URL of your result page">
+        <input type="submit" value="Submit URL">
       </form>
     </div>
   </div>

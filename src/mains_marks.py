@@ -167,11 +167,27 @@ def give_marks(whatever):
 
 def get_rank(marks):
   data = [
-      (286, 292, 19, 12),(280, 284, 42, 23),(268, 279, 106, 64),(250, 267, 524, 108),(231, 249, 1385, 546),(215, 230, 2798, 1421),(200, 214, 4667, 2863),(189, 199, 6664, 4830),(175, 188, 10746, 7152),(160, 174, 16163, 11018),(149, 159, 21145, 16495),(132, 148, 32826, 22238),(120, 131, 43174, 33636),(110, 119, 54293, 44115),(102, 109, 65758, 55269),(95, 101, 76260, 66999),(89, 94, 87219, 78111),(79, 88, 109329, 90144),(62, 87, 169542, 92303),(41, 61, 326517, 173239),(1, 40, 1025009, 334080)
-  ]
+    (281, 301, 100, 1),
+    (261, 281, 400, 100),
+    (241, 261, 1000, 400),
+    (221, 241, 5000, 1000),
+    (211, 221, 7000, 5000),
+    (201, 211, 13000, 7000),
+    (191, 201, 17000, 13000),
+    (181, 191, 22000, 17000),
+    (161, 181, 30000, 22000),
+    (141, 161, 60000, 30000),
+    (121, 141, 850000, 60000),
+    (101, 121, 100000, 85000),
+    (81, 101, 130000, 100000),
+    (61, 81, 200000 , 130000),
+    (41, 61, 300000, 200000),
+    (21, 41, 530000, 300000),
+    (1, 21, 1000000, 530000)
+    ]
   for marks_range_start, marks_range_end, rank_range_start, rank_range_end in data:
     if marks_range_start <= marks <= marks_range_end:
-        return rank_range_start if marks == marks_range_start else rank_range_end
+        return int((rank_range_start-rank_range_end)/(marks_range_start-marks_range_end) * (marks - marks_range_start) + rank_range_start)
 
   return "NA"
 
@@ -181,6 +197,9 @@ if __name__=="__main__":
 
     link="https://cdn3.digialm.com//per/g28/pub/2083/touchstone/AssessmentQPHTMLMode1//2083O24112/2083O24112S12D37065/17127634241224897/UP091211859_2083O24112S12D37065E1.html"
     marks=give_marks(link)
+    n=int(input("Enter the number of questions: "))
+
+    print (get_rank(n))
     print (f"Your marks are {marks}")
 
     #marks_html=give_marks('Test.html')

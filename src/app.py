@@ -5,6 +5,7 @@ import os
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = '/tmp'
+app.config['GA_MEASUREMENT_ID'] = 'G-N6XKNQJQEJ'
 
 @app.route('/')
 def index():
